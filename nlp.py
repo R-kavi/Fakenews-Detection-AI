@@ -9,6 +9,7 @@ from sklearn.metrics import classification_report
 true_data = pd.read_csv('True.csv')
 false_data = pd.read_csv('Fake.csv')
 
+
 # Add a 'label' column to indicate real news (0) and fake news (1)
 true_data['label'] = 0
 false_data['label'] = 1
@@ -34,6 +35,7 @@ df['text'] = df['text'].apply(preprocess_text)
 # Split the dataset into training and testing
 X = df['text']
 y = df['label']
+
 
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
